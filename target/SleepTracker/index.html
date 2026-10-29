@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sleep Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Sleep Tracker Entry</h2>
+
+        <form action="result.jsp" method="post"
+              onsubmit="return validateForm()">
+
+            <label>Person</label>
+            <input type="text" name="person" id="person"
+                   maxlength="40" required>
+
+            <label>Date</label>
+            <input type="date" name="sleep_date"
+                   id="sleep_date" required>
+
+            <label>Hours Slept</label>
+            <input type="number" name="hours" id="hours"
+                   min="0" max="24" step="any" required>
+
+            <button type="submit">Save</button>
+        </form>
+    </div>
+
+
+
+
+    <script>
+            function checkHours() {
+            var hours = document.getElementById("hours").value;
+
+            if (hours < 0 , hours > 24 , hours == "") {
+                alert("Hours must be between 0 and 24");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+</body>
+</html>
